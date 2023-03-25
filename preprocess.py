@@ -10,10 +10,10 @@ def preprocess_iris():
     df = pd.read_csv(file_name, header=None)
     df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class']
 
-    # Numerical variables
-    numeric_vbles = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
-    for c in numeric_vbles:
-        df[c] = StandardScaler().fit_transform(df[c].values.reshape(-1, 1))
+    # # Numerical variables
+    # numeric_vbles = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+    # for c in numeric_vbles:
+    #     df[c] = StandardScaler().fit_transform(df[c].values.reshape(-1, 1))
 
     # Discretize categorical variables
     df['class'] = df['class'].replace({'Iris-setosa': 0, 'Iris-versicolor': 1, 'Iris-virginica': 2})
